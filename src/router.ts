@@ -5,8 +5,9 @@ const router = Router()
 //Routing
 
 /** Autenticación y registro */
-router.get('/auth/register', (req, res) => {
-    res.send('Desde register')
+router.post('/auth/register', (req, res) => {
+    console.log(req.body);
+    
 })
 
 

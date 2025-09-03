@@ -5,7 +5,8 @@ export interface IUser extends Document { // Document, para que herede los atrib
     name: string,
     email: string,
     password: string,
-    description: string
+    description: string,
+    image: string
 }
 
 const userSchema = new Schema({
@@ -38,6 +39,10 @@ const userSchema = new Schema({
         default: '',
         trim: true
     },
+    image: {
+        type: String,
+        default: ''
+    }
 
 })
 

@@ -79,7 +79,7 @@ export const getUser = async (req: Request, res: Response) => {
 
 export const updateProfile = async (req: Request, res: Response) => {  
     try {
-        const { description } = req.body;
+        const { description, links } = req.body;
 
         //Comprobar si el handle esta en uso
         const handle = slug(req.body.handle, '');
@@ -96,6 +96,7 @@ export const updateProfile = async (req: Request, res: Response) => {
         // Actualizar el Usuario
         req.user.description = description;
         req.user.handle = handle;
+        req.user.links = links;
 
         await req.user.save();
         res.send('Perfil actualizado correctamente')

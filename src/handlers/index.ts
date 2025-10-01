@@ -163,7 +163,7 @@ export const searchByHandle = async (req: Request, res: Response) => {
         const { handle } = req.body;
         const userExists = await User.findOne({handle})
 
-        console.log(userExists);
+     //   console.log(userExists);
 
          if (userExists) {
             const error = new Error(`El usuario ${handle} ya existe`);
@@ -172,8 +172,7 @@ export const searchByHandle = async (req: Request, res: Response) => {
         }
 
         res.send(`El usuario ${handle} si esta disponible`)
-        
-        
+         
     } catch (e) {
         const error = new Error('Hubo un error');
         res.status(500).json({error: error.message})

@@ -171,7 +171,7 @@ export const searchByHandle = async (req: Request, res: Response) => {
             return
         }
 
-        res.send(`El usuario ${handle} si esta disponible`)
+        res.send(`El usuario ${handle} esta disponible`)
          
     } catch (e) {
         const error = new Error('Hubo un error');
